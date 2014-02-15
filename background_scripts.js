@@ -1,4 +1,4 @@
-document.body.style.backgroundColor = 'red';
+// document.body.style.backgroundColor = 'red';
 
 var stylesheet = document.createElement('link');
 
@@ -31,8 +31,8 @@ div.appendChild(microphone_div);
 div.appendChild(result_div);
 div.appendChild(info_div);
 
-microphone_script.src = 'http://kcaluru.github.io/Pia/js/microphone.js';
-control_script.src = 'http://kcaluru.github.io/Pia/js/control.js';
+microphone_script.src = 'http://kcaluru.github.io/Pia/microphone.js';
+control_script.src = 'http://kcaluru.github.io/Pia/control.js';
 
 document.body.appendChild(microphone_script);
 document.body.appendChild(control_script);
