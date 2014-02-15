@@ -1,4 +1,4 @@
-// document.body.style.backgroundColor = 'red';
+document.body.style.backgroundColor = 'red';
 
 var stylesheet = document.createElement('link');
 
