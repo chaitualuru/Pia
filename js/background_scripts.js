@@ -11,7 +11,7 @@ var microphone_script = document.createElement('script');
 var control_script = document.createElement('script');
 
 stylesheet.rel = 'stylesheet';
-stylesheet.href = 'http://athyuttamreddy.com/hosted/microphone.css';
+stylesheet.href = 'http://kcaluru.github.io/Pia/css/microphone.css';
 document.head.appendChild(stylesheet);
 
 document.body.appendChild(div);
