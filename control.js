@@ -32,7 +32,6 @@ var mic = new Wit.Microphone(document.getElementById("microphone"));
       }
 
       document.getElementById("result").innerHTML = r;
-      console.log(r);
     };
     mic.connect("ANE6UVZT4KEVXY457UBHJ7XTDAEYAS3J");
     // mic.start();
