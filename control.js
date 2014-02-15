@@ -1,4 +1,5 @@
 var mic = new Wit.Microphone(document.getElementById("microphone"));
+    // var err = "I did not understand!"
     var info = function (msg) {
       document.getElementById("info").innerHTML = msg;
     };
@@ -31,13 +32,13 @@ var mic = new Wit.Microphone(document.getElementById("microphone"));
       }
 
       document.getElementById("result").innerHTML = r;
+      console.log(r);
     };
     mic.connect("ANE6UVZT4KEVXY457UBHJ7XTDAEYAS3J");
     // mic.start();
     // mic.stop();
 
     function kv (k, v) {
-      console.log(k);
       if (toString.call(v) !== "[object String]") {
         v = JSON.stringify(v);
       }
