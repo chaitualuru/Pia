@@ -1,5 +1,3 @@
-// document.body.style.backgroundColor = 'red';
-
 var stylesheet = document.createElement('link');
 
 var div = document.createElement('div');
@@ -9,9 +7,10 @@ var info_div = document.createElement('div');
 
 var microphone_script = document.createElement('script');
 var control_script = document.createElement('script');
+var jquery_script = document.createElement('script');
 
 stylesheet.rel = 'stylesheet';
-stylesheet.href = '/css/microphone.css';
+stylesheet.href = 'http://kcaluru.github.io/Pia/css/microphone.css';
 document.head.appendChild(stylesheet);
 
 document.body.appendChild(div);
@@ -31,8 +30,11 @@ div.appendChild(microphone_div);
 div.appendChild(result_div);
 div.appendChild(info_div);
 
-microphone_script.src = 'microphone.js';
-control_script.src = 'control.js';
+microphone_script.src = 'http://kcaluru.github.io/Pia/microphone.js';
+control_script.src = 'http://kcaluru.github.io/Pia/control.js';
+jquery_script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js';
+
+document.body.appendChild(jquery_script);
 
 document.body.appendChild(microphone_script);
 document.body.appendChild(control_script);

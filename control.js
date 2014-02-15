@@ -19,23 +19,33 @@ var mic = new Wit.Microphone(document.getElementById("microphone"));
     mic.onresult = function (intent, entities, msg) {
 
       var r = kv("intent", intent);
+      var ents = "";
 
       for (var k in entities) {
         var e = entities[k];
         if (!(e instanceof Array)) {
-          r += kv(k, e.value);
+          ents += kv(k, e.value);
         } else {
           for (var i = 0; i < e.length; i++) {
-            r += kv(k, e[i].value);
+            ents += kv(k, e[i].value);
           }
         }
       }
 
-      r += kv("message", msg);
+      var m = kv("message", msg);
 
       document.getElementById("result").innerHTML = r;
+      document.getElementById('result').innerHTML += ents;
+      document.getElementById("result").innerHTML += m;
+      if (r === "intent=search\n"){
+        window.open("https://www.google.com/search?q=" + JSON.stringify(entities.object_to_search.value));
+      }
+      else{
+        ;
+      }
       console.log(r);
-      console.log(confidence);
+      console.log(ents);
+      console.log(m);
     };
     mic.connect("ANE6UVZT4KEVXY457UBHJ7XTDAEYAS3J");
     // mic.start();
@@ -47,3 +57,11 @@ var mic = new Wit.Microphone(document.getElementById("microphone"));
       }
       return k + "=" + v + "\n";
     }
+
+
+
+//     if (window.jQuery) {  
+//     console.log('loaded');
+// } else {
+//     // jQuery is not loaded
+// }
