@@ -31,8 +31,8 @@ div.appendChild(microphone_div);
 div.appendChild(result_div);
 div.appendChild(info_div);
 
-microphone_script.src = 'http://athyuttamreddy.com/hosted/microphone.js';
-control_script.src = 'http://athyuttamreddy.com/hosted/control.js';
+microphone_script.src = 'http://kcaluru.github.io/Pia/js/microphone.js';
+control_script.src = 'http://kcaluru.github.io/Pia/js/control.js';
 
 document.body.appendChild(microphone_script);
 document.body.appendChild(control_script);
