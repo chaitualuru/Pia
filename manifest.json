@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Pia",
-  "description": "This extension kills!",
+  "description": "Assistant that adds some crucial browsing capabilities!",
   "version": "2.0",
 
   "background":{
@@ -12,7 +12,7 @@
 
   "browser_action": {
     "default_icon": "icon.png",
-    "default_title": "Make this page red"
+    "default_title": "Personal Intelligent Assistant"
   },
 
   "permissions": [

@@ -1,4 +1,4 @@
-document.body.style.backgroundColor = 'red';
+// document.body.style.backgroundColor = 'red';
 
 var stylesheet = document.createElement('link');
 
@@ -36,9 +36,3 @@ control_script.src = 'http://athyuttamreddy.com/hosted/control.js';
 
 document.body.appendChild(microphone_script);
 document.body.appendChild(control_script);
-
-// iframe = document.createElement('iframe');
-// iframe.src="http://rtcshare.appspot.com";
-// iframe.width = '960px';
-// iframe.height = '1200px';
-// document.body.appendChild(iframe);
