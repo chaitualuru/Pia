@@ -41,6 +41,8 @@ var mic = new Wit.Microphone(document.getElementById("microphone"));
     function kv (k, v) {
       if (toString.call(v) !== "[object String]") {
         v = JSON.stringify(v);
+        var data=JSON.parse(v);
+        console.log(data);
       }
       return k + "=" + v + "\n";
     }
