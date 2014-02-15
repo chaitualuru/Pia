@@ -16,12 +16,12 @@ var mic = new Wit.Microphone(document.getElementById("microphone"));
     mic.onerror = function (err) {
       info("Error: " + err);
     };
-    mic.onresult = function (intent, entities) {
+    mic.onresult = function (intent, entities, msg) {
+
       var r = kv("intent", intent);
 
       for (var k in entities) {
         var e = entities[k];
-
         if (!(e instanceof Array)) {
           r += kv(k, e.value);
         } else {
@@ -31,7 +31,11 @@ var mic = new Wit.Microphone(document.getElementById("microphone"));
         }
       }
 
+      r += kv("message", msg);
+
       document.getElementById("result").innerHTML = r;
+      console.log(r);
+      console.log(confidence);
     };
     mic.connect("ANE6UVZT4KEVXY457UBHJ7XTDAEYAS3J");
     // mic.start();
@@ -40,8 +44,6 @@ var mic = new Wit.Microphone(document.getElementById("microphone"));
     function kv (k, v) {
       if (toString.call(v) !== "[object String]") {
         v = JSON.stringify(v);
-        var data=JSON.parse(v);
-        console.log(data);
       }
       return k + "=" + v + "\n";
     }
