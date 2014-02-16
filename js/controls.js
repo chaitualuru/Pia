@@ -120,7 +120,7 @@ else {
         }
         break;
       default:
-        document.getElementById("pia_result").innerHTML += "Sorry, I didn't get that.";
+        document.getElementById("pia_result").innerHTML += "\nSorry, I didn't get that.";
     }
 
   };
