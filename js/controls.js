@@ -83,6 +83,15 @@ else {
           chrome.extension.sendRequest(action_url);
         }
         break;
+      case "weather":
+        if(entities.loc_for_weather == undefined) {
+          var action_url = "https://www.google.com/search?q=weather here";
+          chrome.extension.sendRequest(action_url);
+        }
+        else{
+          var action_url = "https://www.google.com/search?q=weather in" + " " +entities.loc_for_weather.value; 
+          chrome.extension.sendRequest(action_url);
+        }
       default:
         document.getElementById("pia_result").innerHTML += "Sorry, I didn't get that.";
     }
