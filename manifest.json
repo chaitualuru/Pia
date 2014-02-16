@@ -5,6 +5,17 @@
   "description": "Pia - Your smart, personal assistant",
   "version": "2.0",
 
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "windows": "Alt+P",
+        "mac": "Alt+P",
+        "chromeos": "Alt+P",
+        "linux": "Alt+P"
+      }
+    }
+  }, 
+
   "background":{
     "scripts": ["background.html"],
     "persistent": true
