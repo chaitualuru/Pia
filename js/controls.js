@@ -90,6 +90,10 @@ else {
         var action_url = "http://" + entities.website_to_open.value;
         chrome.extension.sendRequest(action_url);
         break;
+      case "play":
+        var action_url = "http://www.youtube.com/results?search_query=" + entities.object_to_play.value;
+        chrome.extension.sendRequest(action_url);
+        break;
       case "direction":
         if (entities.origin == undefined) {
           var action_url = "http://maps.google.com/maps/?q=directions to" + " " + entities.destination.value;
