@@ -104,16 +104,12 @@
 	vertical-align: middle;
 	max-width: 200px;
 	overflow: scroll;
+    color: #787878;
 }
 
 #pia_result {
     font-size: 1em;
 }
-
-#pia_info {
-
-}
-
 
 
 
