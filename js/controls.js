@@ -1,7 +1,13 @@
-  var mic = new Wit.Microphone(document.getElementById("microphone"));
+if ($("#pia_container").length <= 0) {
+    console.log("Pia doesn't exist. Cannot execute microphone.js");
+}
+else {
+  console.log("Pia exists. Continuing to execute controls.js");
+  var mic = new Wit.Microphone(document.getElementById("pia_microphone"));
   var info = function (msg) {
-    document.getElementById("info").innerHTML = msg;
+    document.getElementById("pia_info").innerHTML = msg;
   };
+  info("Testing info.");
   mic.onready = function () {
     info("Microphone is ready to record");
   };
@@ -32,14 +38,9 @@
 
     var msg = kv("msg_body", msg_body);
 
-    document.getElementById("result").innerHTML = intent_string;
-    document.getElementById("result").innerHTML += ents;
-    document.getElementById("result").innerHTML += msg;
-
-    // if (intent_string === "intent=search\n") {
-    //   var action_url = "https://www.google.com/search?q=" + JSON.stringify(entities.object_to_search.value);
-    //   chrome.extension.sendRequest(action_url);
-    // }
+    document.getElementById("pia_result").innerHTML = intent_string;
+    document.getElementById("pia_result").innerHTML += ents;
+    document.getElementById("pia_result").innerHTML += msg;
 
     switch(intent_string) {
       case "search":
@@ -83,7 +84,7 @@
         }
         break;
       default:
-        document.getElementById("result").innerHTML += "Sorry, I didn't get that.";
+        document.getElementById("pia_result").innerHTML += "Sorry, I didn't get that.";
     }
 
   };
@@ -98,3 +99,4 @@
     }
     return k + "=" + v + "\n";
   }
+}

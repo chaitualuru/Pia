@@ -91,7 +91,7 @@
 	overflow: hidden;
 }
 
-#result, #info {
+#pia_result, #pia_info {
 	display: inline-block;
 	margin-left: 20px;
 	vertical-align: middle;

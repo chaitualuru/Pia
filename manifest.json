@@ -29,9 +29,16 @@
     "default_title": "Pia - Your smart, personal assistant"
   },
 
+  "web_accessible_resources": [
+    "css/microphone.css",
+    "assets/fonts/microphone.woff",
+    "assets/fonts/microphone.ttf",
+    "assets/fonts/microphone.svg#microphone"
+  ],
+
   "permissions": [
     "tabs",
     "activeTab",
-    "http://*/"
+    "*://*/*"
   ]
 }

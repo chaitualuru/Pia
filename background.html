@@ -1,5 +1,5 @@
 chrome.browserAction.onClicked.addListener(function(tab) {
-	chrome.tabs.executeScript(null, {file: "https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"});
+	chrome.tabs.executeScript(null, {file: "js/jquery-1.11.0.js"});
 	chrome.tabs.executeScript(null, {file: "js/layout.js"});
 	chrome.tabs.executeScript(null, {file: "js/microphone.js"});
 	chrome.tabs.executeScript(null, {file: "js/controls.js"});
