@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'WhitneyBook';
+  src: url('../assets/fonts/whitneyhtf-book.eot?') format('eot'), url('../assets/fonts/whitneyhtf-book.woff') format('woff'), url('../assets/fonts/whitneyhtf-book.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'WhitneyBookSC';
+  src: url('../assets/fonts/whitneyhtf-booksc.eot?') format('eot'), url('../assets/fonts/whitneyhtf-booksc.woff') format('woff'), url('../assets/fonts/whitneyhtf-booksc.ttf') format('truetype');
+}
+
+* {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.2em;
+}
+
+#splash {
+	height: 600px;
+	width: 100%;
+	background-image: url('../assets/images/background.png');
+	background-size: 100%;
+	text-align: center;
+}
+
+#logo {
+	height: 200px;
+	width: 200px;
+	margin: 3em auto 0em auto;
+}
+
+h1 {
+	font-family: 'WhitneyBookSC';
+	color: white;
+	font-size: 15em;
+}
+
+h2 {
+	font-family: 'WhitneyBook';
+	font-weight: 200;
+	color: white;
+	font-size: 2em;
+}
+
+#features {
+	height: 600px;
+	background: -webkit-linear-gradient(top, #ffffff 0%,#e9e9e9 100%);
+}
+
+#footer {
+	height: 100px;
+	background: -webkit-linear-gradient(top, #ffffff 0%,#e9e9e9 100%);;
+}

@@ -1,4 +1,4 @@
-if ($("#pia_container").length <= 0) {
+if ($("#pia_container_status").length <= 0) {
     console.log("Pia doesn't exist. Cannot execute microphone.js");
 }
 else {
