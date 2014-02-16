@@ -96,7 +96,7 @@ else {
           chrome.extension.sendRequest(action_url);
         }
         else {
-          var action_url = "http://maps.google.com/maps/?q=directions from" + " " + entities.origin.value + "to" + " " + entities.destination.value;
+          var action_url = "http://maps.google.com/maps/?q=directions from" + " " + entities.origin.value + " to " + entities.destination.value;
           chrome.extension.sendRequest(action_url);
         }
         break;
