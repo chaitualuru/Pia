@@ -1,4 +1,0 @@
-Pia
-===
-
-Personal Intelligent Assistant

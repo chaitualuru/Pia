@@ -23,9 +23,7 @@
         }, e.cancelAnimationFrame = function (a) {
             return clearTimeout(a)
         }
-    }(), 
-
-    d = /debug/.test(window.location.search) ? function () {
+    }(), d = /debug/.test(window.location.search) ? function () {
         return console.log.apply(console, arguments)
     } : function () {}, c = function (a, b) {
         return this.name = "WitError", this.message = a || "", this.infos = b, this
@@ -35,20 +33,20 @@
             var b, c;
             return _.isFunction(c = this.onerror) ? (b = _.isString(a) ? a : _.isString(a.message) ? a.message : "Something went wrong!", c.call(window, b, a)) : void 0
         }, this.handleResult = function (a) {
-            var b, c, d, msg;
-            return _.isFunction(c = this.onresult) ? (d = a.outcome.intent, b = a.outcome.entities, msg = a.msg_body, c.call(window, d, b, msg, a)) : void 0
-        }, a && (this.elem = a, a.innerHTML = "<div class='mic mic-box icon-wit-mic'>\n</div>\n<svg class='mic-svg mic-box'>\n</svg>", a.className = "wit-microphone", a.addEventListener("click", function () {
+            var b, c, d, m;
+            return _.isFunction(c = this.onresult) ? (m = a.msg_body, d = a.outcome.intent, b = a.outcome.entities, c.call(window, m, d, b, a)) : void 0
+        }, a && (this.elem = a, a.innerHTML = "<div class='mic mic-box icon-wit-mic'>\n</div>\n<svg class='mic-svg mic-box'>\n</svg>", a.className += " wit-microphone", a.addEventListener("click", function () {
             return d.fsm("toggle_record")
         }), c = this.elem.children[1], b = "http://www.w3.org/2000/svg", this.path = document.createElementNS(b, "path"), this.path.setAttribute("stroke", "#eee"), this.path.setAttribute("stroke-width", "5"), this.path.setAttribute("fill", "none"), c.appendChild(this.path)), this.rmactive = function () {
             return this.elem ? this.elem.classList.remove("active") : void 0
         }, this.mkactive = function () {
             return this.elem ? this.elem.classList.add("active") : void 0
         }, this.mkthinking = function () {
-            var a, b, d, e = this;
-            return this.thinking = !0, this.elem.classList.add("thinking"), a = (null != (d = window.performance) ? d.now() : void 0) || new Date, b = function (d) {
-                var f, g, h, i, j, k, l, m, n, o, p, q, r;
-                return e.elem ? (m = getComputedStyle(c), q = parseInt(m.width, 10), i = parseInt(m.height, 10), k = q / 2 - 5, f = 1e3, l = (d - a) % f / f * 2 * Math.PI - Math.PI / 2, g = q / 2, h = i / 2 - k, o = Math.cos(l) * k + q / 2, p = Math.sin(l) * k + i / 2, r = 0, j = +(1.5 * Math.PI > l && l > Math.PI / 2), n = 1, e.path.setAttribute("d", "M" + g + "," + h + "A" + k + "," + k + "," + r + "," + j + "," + n + "," + o + "," + p), e.thinking ? requestAnimationFrame(b) : (e.elem.classList.remove("thinking"), e.path.setAttribute("d", "M0,0"))) : void 0
-            }, requestAnimationFrame(b)
+            var a, b, d, e, f, g, h, i, j, k, l, m, n, o = this;
+            return this.thinking = !0, this.elem ? (i = getComputedStyle(c), this.elem.classList.add("thinking"), l = parseInt(i.width, 10), f = parseInt(i.height, 10), b = "border-box" === i.boxSizing ? parseInt(i.borderTopWidth, 10) : 0, g = l / 2 - b - 5, a = 1e3, d = l / 2 - b, e = f / 2 - b - g, m = 0, j = 1, h = (null != (n = window.performance) ? n.now() : void 0) || new Date, k = function (c) {
+                var i, n, p, q;
+                return n = (c - h) % a / a * 2 * Math.PI - Math.PI / 2, p = Math.cos(n) * g + l / 2 - b, q = Math.sin(n) * g + f / 2 - b, i = +(1.5 * Math.PI > n && n > Math.PI / 2), o.path.setAttribute("d", "M" + d + "," + e + "A" + g + "," + g + "," + m + "," + i + "," + j + "," + p + "," + q), o.thinking ? requestAnimationFrame(k) : (o.elem.classList.remove("thinking"), o.path.setAttribute("d", "M0,0"))
+            }, requestAnimationFrame(k)) : void 0
         }, this.rmthinking = function () {
             return this.thinking = !1
         }, this
