@@ -49,7 +49,7 @@
 }
 
 .mic-box {
-    border: 4px solid #b2b2b2;
+    border: 4px solid #a5a5a5;
     /* -webkit-border-image: -webkit-linear-gradient(top, #ff5e3a 0%,#ff2a68 100%); */
 }
 
@@ -63,7 +63,7 @@
 .mic {
     background: #fff;
     border-radius: 100%;
-    color: #b2b2b2;
+    color: #787878;
     cursor: pointer;
     display: inline-block;
     font-size: 42px;
