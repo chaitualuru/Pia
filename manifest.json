@@ -39,6 +39,7 @@
   "permissions": [
     "tabs",
     "activeTab",
-    "*://*/*"
+    "*://*/*",
+    "http://*/"
   ]
 }

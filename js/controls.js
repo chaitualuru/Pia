@@ -119,13 +119,16 @@ else {
             chrome.extension.sendRequest(action_url);
         }
         break;
+        case "hello":
+          chrome.extension.sendRequest("Hello. How can I help you today?", true);
+          break;
       default:
         document.getElementById("pia_result").innerHTML += "\nSorry, I didn't get that.";
     }
 
   };
 
-  mic.connect("ANE6UVZT4KEVXY457UBHJ7XTDAEYAS3J");
+  mic.connect("IWXWBABFJVN24ZZT726FWLZRWCR3BYGA");
   // mic.start();
   // mic.stop();
 

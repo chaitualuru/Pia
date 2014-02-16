@@ -1,10 +1,16 @@
 chrome.browserAction.onClicked.addListener(function(tab) {
+	chrome.tts.speak("Hello how are you today");
 	chrome.tabs.executeScript(null, {file: "js/jquery-1.11.0.js"});
 	chrome.tabs.executeScript(null, {file: "js/layout.js"});
 	chrome.tabs.executeScript(null, {file: "js/microphone.js"});
 	chrome.tabs.executeScript(null, {file: "js/controls.js"});
 });
 
-chrome.extension.onRequest.addListener(function(action_url) {
-	chrome.tabs.create({ url: action_url});
+chrome.extension.onRequest.addListener(function(action_url, shouldSpeak) {
+	if (shouldSpeak) {
+		chrome.tts.speak(action_url);
+	}
+	else {
+		chrome.tabs.create({ url: action_url});
+	}
 });
