@@ -109,6 +109,7 @@ else {
           var action_url = "https://www.google.com/search?q=weather in" + " " +entities.loc_for_weather.value; 
           chrome.extension.sendRequest(action_url);
         }
+        break;
         case "compose":
           if((entities.receiver_person == undefined) || (entities.receiver_website == undefined)) {
             document.getElementById("pia_result").innerHTML += "Sorry, I didn't get that.";  
@@ -117,6 +118,7 @@ else {
             var action_url = "mailto:" + entities.receiver_person.value + "@" + entities.receiver_website.value;
             chrome.extension.sendRequest(action_url);
         }
+        break;
       default:
         document.getElementById("pia_result").innerHTML += "Sorry, I didn't get that.";
     }
