@@ -72,6 +72,16 @@
         var action_url = "http://" + entities.website_to_open.value;
         chrome.extension.sendRequest(action_url);
         break;
+      case "direction":
+        if (entities.origin == undefined) {
+          var action_url = "http://maps.google.com/maps/?q=directions to" + " " + entities.destination.value;
+          chrome.extension.sendRequest(action_url);
+        }
+        else {
+          var action_url = "http://maps.google.com/maps/?q=directions from" + " " + entities.origin.value + "to" + " " + entities.destination.value;
+          chrome.extension.sendRequest(action_url);
+        }
+        break;
       default:
         document.getElementById("result").innerHTML += "Sorry, I didn't get that.";
     }
