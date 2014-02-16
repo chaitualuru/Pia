@@ -6,6 +6,11 @@
     font-style: normal;
 }
 
+@font-face {
+  font-family: 'WhitneyBook';
+  src: url('../assets/fonts/whitneyhtf-book.eot?') format('eot'), url('../assets/fonts/whitneyhtf-book.woff') format('woff'), url('../assets/fonts/whitneyhtf-book.ttf') format('truetype');
+}
+
 .icon-wit-mic {
     font-family: microphone;
     speak: none;
@@ -80,6 +85,7 @@
 }
 
 #pia_container {
+    z-index: 1000;
 	width: 350px;
 	height: 100px;
 	position: fixed;
@@ -88,13 +94,26 @@
 	border: 1px solid rgba(204, 204, 204, 0.5);
 	border-radius: 10px;
 	background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 100%);
-	overflow: hidden;
+	overflow: scroll;
 }
 
-#pia_result, #pia_info {
+#pia_text_div {
+    font-family: 'whitneyhtf-book', Helvetica, Arial, sans-serif;
 	display: inline-block;
-	margin-left: 20px;
+	margin-left: 30px;
 	vertical-align: middle;
 	max-width: 200px;
 	overflow: scroll;
 }
+
+#pia_result {
+    font-size: 1em;
+}
+
+#pia_info {
+
+}
+
+
+
+

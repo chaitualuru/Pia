@@ -4,17 +4,36 @@ if ($("#pia_container").length <= 0) {
 else {
   console.log("Pia exists. Continuing to execute controls.js");
   var mic = new Wit.Microphone(document.getElementById("pia_microphone"));
+
+  var started = false;
+  $(document).on('keydown', function(e) {
+    if (e.which == 32) {
+      e.preventDefault();
+      if (started) {
+        mic.stop();
+        started = false;
+      }
+      else {
+        mic.start();
+        started = true;
+      }
+    }
+  });
+
   var info = function (msg) {
     document.getElementById("pia_info").innerHTML = msg;
   };
-  info("Testing info.");
   mic.onready = function () {
-    info("Microphone is ready to record");
+    info("How can I help you today?");
   };
   mic.onaudiostart = function () {
+    started = true;
+    // playSound(chrome.extension.getURL('../assets/sounds/start_recording.mp3'));
     info("Recording started");
   };
   mic.onaudioend = function () {
+    started = false;
+    // playSound(chrome.extension.getURL('../assets/sounds/stop_recording.mp3'));
     info("Recording stopped, processing started");
   };
   mic.onerror = function (err) {
@@ -38,9 +57,7 @@ else {
 
     var msg = kv("msg_body", msg_body);
 
-    document.getElementById("pia_result").innerHTML = intent_string;
-    document.getElementById("pia_result").innerHTML += ents;
-    document.getElementById("pia_result").innerHTML += msg;
+    document.getElementById("pia_result").innerHTML = JSON.stringify(msg_body);
 
     switch(intent_string) {
       case "search":
@@ -107,5 +124,9 @@ else {
       v = JSON.stringify(v);
     }
     return k + "=" + v + "\n";
+  }
+
+  function playSound(soundfile) {
+    document.getElementById('sound_container').innerHTML = "<embed src='" + soundfile + "' hidden='true' autostart='true' loop='false'/>";
   }
 }
