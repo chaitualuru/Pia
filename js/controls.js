@@ -57,7 +57,7 @@ else {
 
     var msg = kv("msg_body", msg_body);
 
-    document.getElementById("pia_result").innerHTML = JSON.stringify(msg_body);
+    document.getElementById("pia_result").innerHTML = JSON.stringify(msg_body) + "\n";
 
     switch(intent_string) {
       case "search":
@@ -120,7 +120,10 @@ else {
         }
         break;
         case "hello":
-          chrome.extension.sendRequest("Hello. How can I help you today?", true);
+          document.getElementById("pia_result").innerHTML += "";
+          break;
+        case "bye":
+          document.getElementById("pia_result").innerHTML += "";
           break;
       default:
         document.getElementById("pia_result").innerHTML += "\nSorry, I didn't get that.";
@@ -128,7 +131,7 @@ else {
 
   };
 
-  mic.connect("IWXWBABFJVN24ZZT726FWLZRWCR3BYGA");
+  mic.connect("UBYUD4AJGNWOWURYNFECWVA3DOQJXDHT");
   // mic.start();
   // mic.stop();
 
