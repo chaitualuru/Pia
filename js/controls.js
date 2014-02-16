@@ -4,7 +4,7 @@ if ($("#pia_container_status").length <= 0) {
 else {
   console.log("Pia exists. Continuing to execute controls.js");
   var mic = new Wit.Microphone(document.getElementById("pia_microphone"));
-
+  mic.start();
   var started = false;
   $(document).on('keydown', function(e) {
     if (e.which == 32) {
