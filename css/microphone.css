@@ -94,7 +94,7 @@
 	border: 1px solid rgba(204, 204, 204, 0.5);
 	border-radius: 10px;
 	background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 100%);
-	overflow: scroll;
+	overflow-y: hidden;
 }
 
 #pia_text_div {
@@ -103,7 +103,7 @@
 	margin-left: 30px;
 	vertical-align: middle;
 	max-width: 200px;
-	overflow: scroll;
+	overflow-y: hidden;
     color: #787878;
 }
 
