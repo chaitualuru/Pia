@@ -5,14 +5,17 @@ Pia is a voice controlled personal assistant for Chrome.
 
 Some things you can ask Pia:
 
-"Open Google"
-"Search for Kittens"
-"Search Wikipedia for Ponzi Scheme"
-"Search IMDb for Frozen"
-"Email nick@yahoo.com"
-"What's the weather like today?"
-"How far is New York City?"
-"How do I get from Philadelphia to San Francisco?"
+- "Open Google"
+- "Search for Kittens"
+- "Search Wikipedia for Ponzi Scheme"
+- "Search Wolfram for Distance to the Moon"
+- "Search IMDb for Titanic"
+- "Compare reviews for Frozen"
+- "Email nick@yahoo.com"
+- "Play Gangnam Style"
+- "What's the weather like today?"
+- "How far is New York City?"
+- "How do I get from Philadelphia to San Francisco?"
 
 Follow us: www.getpia.com
 
