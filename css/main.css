@@ -15,9 +15,9 @@
 
 #splash {
 	height: 600px;
-	width: 100%;
 	background-image: url('../assets/images/background.png');
-	background-size: 100%;
+	background-size: cover;
+	background-attachment: fixed;
 	text-align: center;
 }
 

@@ -1,9 +1,9 @@
 if ($("#pia_container").length > 0) {
-  	console.log("Pia exists. Now removing.");
-  	$("#pia_container_status").remove();
-  	$("#pia_container").animate({right:"30px"},200).animate({right:"-300px"},200, function() {
-  		$("#pia_container").remove();
-  	});
+	console.log("Pia exists. Now removing.");
+	$("#pia_container_status").remove();
+	$("#pia_container").animate({right:"30px"},200).animate({right:"-300px"},200, function() {
+		$("#pia_container").remove();
+	});
 }
 else {
 	console.log("Pia doesn't exist. Now creating.")
