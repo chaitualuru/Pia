@@ -81,7 +81,8 @@ ul > li:nth-child(even) {
 	width: 100%;
 	background: -webkit-linear-gradient(top, #353535 0%,#3c3a3a 100%);
 	text-align: center;
-	font-size: 1.25em;
+	font-size: 1.1em;
+	line-height: 2em;
 	color: #9a9a9a;
 	font-family: 'WhitneyBook';
 	padding-top: 20px;
@@ -89,9 +90,18 @@ ul > li:nth-child(even) {
 	oveflow: scroll;
 }
 
-#footer > p {
-	vertical-align: middle;
+#footer > p:first-child {
+	font-size: 1.25em;
+}
+
+#footer_second {
 	margin: 0.5em auto;
+}
+
+#footer_second > p {
+	display: inline-block;
+
+	margin: 0em 0.5em;
 }
 
 a, a:active, a:visited {
@@ -103,3 +113,22 @@ a, a:active, a:visited {
 a:hover {
 	border-bottom: 2px solid #9a9a9a;
 }
+
+#image_anchor {
+	border: none;
+	background-image: url('../assets/images/logo_lightgrey.png');
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 1.5em;
+	width: 1.5em;
+	vertical-align: middle;
+	cursor: pointer;
+	background-size: contain;
+	transition: 0.5s;
+	-webkit-transition: 0.5s;
+}
+
+#image_anchor:hover {
+	background-image: url('../assets/images/logo_darkgrey.png');
+	transition: 0.5s;
+	-webkit-transition: 0.5s;
