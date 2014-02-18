@@ -17,7 +17,7 @@
 	height: 600px;
 	background-image: url('../assets/images/background.png');
 	background-size: cover;
-	background-repeat: none;
+	background-repeat: no-repeat;
 	background-attachment: fixed;
 	text-align: center;
 }
