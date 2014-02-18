@@ -5,7 +5,7 @@ Pia is a voice controlled personal assistant for Chrome.
 
 Some things you can ask Pia:
 
-- "Open Google"
+- "Open Netflix"
 - "Search for Kittens"
 - "Search Wikipedia for Ponzi Scheme"
 - "Search Wolfram for Distance to the Moon"
