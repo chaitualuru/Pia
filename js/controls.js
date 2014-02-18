@@ -87,8 +87,14 @@ else {
 				}
 				break;
 			case "open":
-				var action_url = "http://" + entities.website_to_open.value;
-				chrome.extension.sendRequest(action_url);
+				if((entities.website_to_open.value).indexOf(".") < 0) {
+					var action_url = "http://" + entities.website_to_open.value + ".com";
+					chrome.extension.sendRequest(action_url);
+				}
+				else {
+					var action_url = "http://" + entities.website_to_open.value;
+					chrome.extension.sendRequest(action_url);
+				}
 				break;
 			case "play":
 				var action_url = "http://www.youtube.com/results?search_query=" + entities.object_to_play.value;
