@@ -129,8 +129,17 @@ else {
         case "bye":
           document.getElementById("pia_result").innerHTML += "";
           break;
-      default:
-        document.getElementById("pia_result").innerHTML += "\nSorry, I didn't get that.";
+        case "compare_reviews":
+          var movie = entities.movie_to_review.value;
+          var action_url_imdb = "http://www.imdb.com/find?q=" + movie;
+          chrome.extension.sendRequest(action_url_imdb);
+          var action_url_rt = "http://www.rottentomatoes.com/search/?search=" + movie;
+          chrome.extension.sendRequest(action_url_rt);
+          var action_url_youtube = "http://www.youtube.com/results?search_query=" + movie + " trailer";
+          chrome.extension.sendRequest(action_url_youtube);
+          break;
+        default:
+          document.getElementById("pia_result").innerHTML += "\nSorry, I didn't get that.";
     }
 
   };
