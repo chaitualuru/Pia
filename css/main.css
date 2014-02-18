@@ -70,17 +70,20 @@ li {
 }
 
 #footer {
+	display: table;
 	height: 100px;
+	width: 100%;
 	background: -webkit-linear-gradient(top, #353535 0%,#3c3a3a 100%);
 	text-align: center;
 	font-size: 1.25em;
 	color: #9a9a9a;
 	font-family: 'WhitneyBook';
+	padding-top: 20px;
 }
 
 #footer > p {
 	vertical-align: middle;
-	line-height: 100px;
+	margin: 0.5em auto;
 }
 
 a, a:active, a:visited {
