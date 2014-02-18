@@ -47,6 +47,7 @@ h1 {
 	font-family: 'WhitneyBook';
 	position: relative;
 	overflow: scroll;
+	padding: 0 10%;
 }
 
 #features > h2 {
