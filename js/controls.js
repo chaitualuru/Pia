@@ -4,7 +4,6 @@ if (document.getElementById('pia_container').getAttribute('data-session-id') != 
 else {
 	console.log("Pia is being initialized for the first time. Executing controls.js.");
 	var mic = new Wit.Microphone(document.getElementById("pia_microphone"));
-	mic.start();
 	var started = false;
 	$(document).on('keydown', function(e) {
 		if (e.which == 32) {
@@ -31,6 +30,7 @@ else {
 		// playSound(chrome.extension.getURL('../assets/sounds/start_recording.mp3'));
 		info("Recording started");
 	};
+
 	mic.onaudioend = function () {
 		started = false;
 		// playSound(chrome.extension.getURL('../assets/sounds/stop_recording.mp3'));
