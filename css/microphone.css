@@ -85,7 +85,7 @@
 }
 
 #pia_container {
-	z-index: 1000;
+	z-index: 2147483647;
 	width: 350px;
 	height: 100px;
 	position: fixed;
@@ -111,6 +111,10 @@
 	font-size: 1em;
 	font-family: 'Georgia';
 	font-style: italic;
+}
+
+#pia_info {
+	font-size: 15px;
 }
 
 

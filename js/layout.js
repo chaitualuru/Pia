@@ -1,19 +1,30 @@
-if ($("#pia_container").length > 0) {
-	console.log("Pia exists. Now removing.");
-	$("#pia_container_status").remove();
+if ($("#pia_container").is(':visible')) {
+	console.log("Pia is visible. Now hiding.");
+	var currentSession = Number(document.getElementById('pia_container').getAttribute('data-session-id'));
+	var newSession = (currentSession + 0.5).toString();
+	console.log("Pia session: " + newSession);
+	document.getElementById('pia_container').setAttribute('data-session-id', newSession);
 	$("#pia_container").animate({right:"30px"},200).animate({right:"-300px"},200, function() {
-		$("#pia_container").remove();
+		$("#pia_container").hide();
 	});
 }
+else if ($('#pia_container').is(':hidden')) {
+	console.log("Pia is hidden. Now making visible again.");
+	$("#pia_container").show();
+	$("#pia_container").animate({right:"-300px"},0).animate({right:"30px"},200).animate({right:"15px"},200);
+	var currentSession = Number(document.getElementById('pia_container').getAttribute('data-session-id'));
+	var newSession = (currentSession + 0.5).toString();
+	console.log("Pia session: " + newSession);
+	document.getElementById('pia_container').setAttribute('data-session-id', newSession);
+}
 else {
-	console.log("Pia doesn't exist. Now creating.")
+	console.log("Pia is being initialized for the first time. Creating Pia.");
 	var stylesheet = document.createElement('link');
 	stylesheet.rel = 'stylesheet';
 	stylesheet.href = chrome.extension.getURL('../css/microphone.css');
 	document.head.appendChild(stylesheet);
 
 	var div = document.createElement('div');
-	var pia_container_status = document.createElement('div');
 	var microphone_div = document.createElement('div');
 	var text_div = document.createElement('div');
 	var result_div = document.createElement('div');
@@ -21,9 +32,9 @@ else {
 	var sound_container = document.createElement('span');
 
 	div.id = 'pia_container';
-	pia_container_status.id = 'pia_container_status';
+	div.setAttribute('data-session-id', '0');
+	console.log("Pia session: 0");
 	document.body.appendChild(div);
-	document.body.appendChild(pia_container_status);
 
 	text_div.id = 'pia_text_div';
 	microphone_div.id = 'pia_microphone';
@@ -37,5 +48,5 @@ else {
 	text_div.appendChild(result_div);
 	text_div.appendChild(info_div);
 
-	$("#pia_container").animate({right:"-300px"},0).animate({right:"30px"},200).animate({right:"15px"},200);
+	//$("#pia_container").animate({right:"-300px"},0).animate({right:"30px"},200).animate({right:"15px"},200);
 }

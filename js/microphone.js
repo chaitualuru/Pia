@@ -1,8 +1,8 @@
-if ($("#pia_container_status").length <= 0) {
-	console.log("Pia doesn't exist. Cannot execute microphone.js");
+if (document.getElementById('pia_container').getAttribute('data-session-id') != '0')  {
+	console.log("Pia was called in a previous session. Will not execute microphone.js again.");
 }
 else {
-	console.log("Pia exists. Continuing to execute microphone.js");
+	console.log("Pia is initialized for the first time. Executing microphone.js.");
 	(function () {
 		var a, b, c, d, e;
 		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia, window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.msAudioContext,

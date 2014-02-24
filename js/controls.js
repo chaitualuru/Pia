@@ -1,8 +1,8 @@
-if ($("#pia_container_status").length <= 0) {
-		console.log("Pia doesn't exist. Cannot execute microphone.js");
+if (document.getElementById('pia_container').getAttribute('data-session-id') != '0') {
+	console.log("Pia was called in a previous session. Will not execute controls.js again.");
 }
 else {
-	console.log("Pia exists. Continuing to execute controls.js");
+	console.log("Pia is being initialized for the first time. Executing controls.js.");
 	var mic = new Wit.Microphone(document.getElementById("pia_microphone"));
 	mic.start();
 	var started = false;
