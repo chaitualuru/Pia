@@ -4,14 +4,14 @@ if ($("#pia_container").is(':visible')) {
 	var newSession = (currentSession + 0.5).toString();
 	console.log("Pia session: " + newSession);
 	document.getElementById('pia_container').setAttribute('data-session-id', newSession);
-	$("#pia_container").animate({right:"30px"},200).animate({right:"-300px"},200, function() {
+	$("#pia_container").animate({right:"30px"},200).animate({right:"-330px"},300, function() {
 		$("#pia_container").hide();
 	});
 }
 else if ($('#pia_container').is(':hidden')) {
 	console.log("Pia is hidden. Now making visible again.");
 	$("#pia_container").show();
-	$("#pia_container").animate({right:"-300px"},0).animate({right:"30px"},200).animate({right:"15px"},200);
+	$("#pia_container").animate({right:"-300px"},0).animate({right:"30px"},300).animate({right:"15px"},200);
 	var currentSession = Number(document.getElementById('pia_container').getAttribute('data-session-id'));
 	var newSession = (currentSession + 0.5).toString();
 	console.log("Pia session: " + newSession);
@@ -48,5 +48,5 @@ else {
 	text_div.appendChild(result_div);
 	text_div.appendChild(info_div);
 
-	//$("#pia_container").animate({right:"-300px"},0).animate({right:"30px"},200).animate({right:"15px"},200);
+	$("#pia_container").animate({right:"-300px"},0).animate({right:"30px"},400).animate({right:"15px"},200);
 }
