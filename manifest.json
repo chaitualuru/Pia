@@ -37,7 +37,9 @@
 		"assets/fonts/whitneyhtf-book.woff",
 		"assets/fonts/whitneyhtf-book.eot",
 		"assets/fonts/whitneyhtf-book.svg",
-		"assets/fonts/whitneyhtf-book.ttf"
+		"assets/fonts/whitneyhtf-book.ttf",
+		"assets/sounds/start_recording.mp3",
+		"assets/sounds/stop_recording.mp3"
 	],
 
 	"permissions": [

@@ -29,9 +29,4 @@ Proudly powered by [Wit](http://wit.ai/ "Wit").
 
 Pia has a few issues that need to be fixed before we can push it to the Chrome Store. It started off as a project at the [PennApps Spring 2014](http://2014s.pennapps.com/ "PennApps Spring 2014") hackathon, and we now hope to finish it as an open-source project with your help.
 
-If you have any experience with web development, setting up a custom server, or working with Chrome extensions, we would really appreciate your help. Thank you so much!
-
-- Requires microphone permission each time on non-https websites
-- Toggling on and off while on the same page causes issues of Pia disappearing
-- Voice recording on second-call of Pia on the same page doesn't work
 - Voice recording should start as soon as Pia is called

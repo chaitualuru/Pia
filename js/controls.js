@@ -4,6 +4,20 @@ if (document.getElementById('pia_container').getAttribute('data-session-id') != 
 else {
 	console.log("Pia is being initialized for the first time. Executing controls.js.");
 	var mic = new Wit.Microphone(document.getElementById("pia_microphone"));
+
+	var start_player = document.createElement('audio');
+	start_player.id = "short_audio1";
+	start_player.src = chrome.extension.getURL("../assets/sounds/start_recording.mp3");
+	start_player.type = "audio/mpeg";
+	document.body.appendChild(start_player);
+
+	var stop_player = document.createElement('audio');
+	stop_player.id = "short_audio2";
+	stop_player.src = chrome.extension.getURL("../assets/sounds/stop_recording.mp3");
+	stop_player.type = "audio/mpeg";
+	document.body.appendChild(stop_player);
+
+
 	var started = false;
 	$(document).on('keydown', function(e) {
 		var shortcutChecker = Number(document.getElementById('pia_container').getAttribute('data-session-id'))%1;
@@ -30,22 +44,25 @@ else {
 	};
 	mic.onready = function () {
 		info("How can I help you today?");
+		// mic.start();
 	};
+
 	mic.onaudiostart = function () {
+		start_player.play();
 		started = true;
-		// playSound(chrome.extension.getURL('../assets/sounds/start_recording.mp3'));
 		info("Recording started");
 	};
 
 	mic.onaudioend = function () {
+		stop_player.play();
 		started = false;
-		// playSound(chrome.extension.getURL('../assets/sounds/stop_recording.mp3'));
 		info("Recording stopped, processing started");
 	};
 	mic.onerror = function (err) {
 		info("Error: " + err);
 	};
 	mic.onresult = function (msg_body, intent, entities) {
+		started=false;
 		var intent_string = intent;
 		
 		var ents = "";
@@ -165,9 +182,5 @@ else {
 			v = JSON.stringify(v);
 		}
 		return k + "=" + v + "\n";
-	}
-
-	function playSound(soundfile) {
-		document.getElementById('sound_container').innerHTML = "<embed src='" + soundfile + "' hidden='true' autostart='true' loop='false'/>";
 	}
 }
