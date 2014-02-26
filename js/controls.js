@@ -6,16 +6,22 @@ else {
 	var mic = new Wit.Microphone(document.getElementById("pia_microphone"));
 	var started = false;
 	$(document).on('keydown', function(e) {
-		if (e.which == 32) {
-			e.preventDefault();
-			if (started) {
-				mic.stop();
-				started = false;
+		var shortcutChecker = Number(document.getElementById('pia_container').getAttribute('data-session-id'))%1;
+		if (shortcutChecker%1 == 0){
+			if (e.which == 32) {
+				e.preventDefault();
+				if (started) {
+					mic.stop();
+					started = false;
+				}
+				else {
+					mic.start();
+					started = true;
+				}
 			}
-			else {
-				mic.start();
-				started = true;
-			}
+		}
+		else {
+			;
 		}
 	});
 
