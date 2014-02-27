@@ -7,7 +7,7 @@
     
     "icons": {
         "128": "icon_128.png"
-    }
+    },
 
 	"commands": {
 		"_execute_browser_action": {
