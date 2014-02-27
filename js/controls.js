@@ -56,6 +56,7 @@ else {
 	mic.onaudioend = function () {
 		stop_player.play();
 		started = false;
+		// mic.stop();
 		info("Recording stopped, processing started");
 	};
 	mic.onerror = function (err) {
@@ -108,7 +109,7 @@ else {
 						chrome.extension.sendRequest(action_url);
 						break;
 				}
-				break;
+			break;
 			case "open":
 				if((entities.website_to_open.value).indexOf(".") < 0) {
 					var action_url = "http://" + entities.website_to_open.value + ".com";
@@ -118,11 +119,11 @@ else {
 					var action_url = "http://" + entities.website_to_open.value;
 					chrome.extension.sendRequest(action_url);
 				}
-				break;
+			break;
 			case "play":
 				var action_url = "http://www.youtube.com/results?search_query=" + entities.object_to_play.value;
 				chrome.extension.sendRequest(action_url);
-				break;
+			break;
 			case "direction":
 				if (entities.origin == undefined) {
 					var action_url = "http://maps.google.com/maps/?q=directions to" + " " + entities.destination.value;
@@ -132,7 +133,7 @@ else {
 					var action_url = "http://maps.google.com/maps/?q=directions from" + " " + entities.origin.value + " to " + entities.destination.value;
 					chrome.extension.sendRequest(action_url);
 				}
-				break;
+			break;
 			case "weather":
 				if(entities.loc_for_weather == undefined) {
 					var action_url = "https://www.google.com/search?q=weather here";
@@ -143,22 +144,22 @@ else {
 					chrome.extension.sendRequest(action_url);
 				}
 				break;
-				case "compose":
-					if((entities.receiver_person == undefined) || (entities.receiver_website == undefined)) {
+			case "compose":
+				if((entities.receiver_person == undefined) || (entities.receiver_website == undefined)) {
 						document.getElementById("pia_result").innerHTML += "Sorry, I didn't get that.";  
 				}
-					else{
+				else{
 						var action_url = "mailto:" + entities.receiver_person.value + "@" + entities.receiver_website.value;
 						chrome.extension.sendRequest(action_url);
 				}
-				break;
-				case "hello":
+			break;
+			case "hello":
 					document.getElementById("pia_result").innerHTML += "";
-					break;
-				case "bye":
+			break;
+			case "bye":
 					document.getElementById("pia_result").innerHTML += "";
-					break;
-				case "compare_reviews":
+			break;
+			case "compare_reviews":
 					var movie = entities.movie_to_review.value;
 					var action_url_youtube = "http://www.youtube.com/results?search_query=" + movie + " trailer";
 					chrome.extension.sendRequest(action_url_youtube);
@@ -166,9 +167,24 @@ else {
 					chrome.extension.sendRequest(action_url_imdb);
 					var action_url_rt = "http://www.rottentomatoes.com/search/?search=" + movie;
 					chrome.extension.sendRequest(action_url_rt);
-					break;
-				default:
-					document.getElementById("pia_result").innerHTML += "\nSorry, I didn't get that.";
+			break;
+			case "logout":
+				var page = new String(document.URL);
+				if (page.indexOf('mail.google.com') != -1) {
+					document.getElementById('gb_71').click();
+				}
+				else if(page.indexOf('facebook.com') != -1) {
+					document.getElementById('logout_form').submit();
+				}
+				else if(page.indexOf('bankofamerica.com') != -1) { 
+					document.getElementsByName('onh_sign_off')[0].click();
+				}
+				else { 
+					document.getElementById("pia_result").innerHTML += "\nCannot logout of this website.";
+				}
+			break;
+			default:
+				document.getElementById("pia_result").innerHTML += "\nSorry, I didn't get that.";
 		}
 
 	};

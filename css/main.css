@@ -34,6 +34,32 @@ h1 {
 	font-size: 15em;
 }
 
+#left-container {
+	height:450px;
+	width:33%;
+	float:left;
+	margin-left: 90px;
+	background: -webkit-linear-gradient(top, #353535 0%,#3c3a3a 100%);
+	color: #9a9a9a;
+	font-size: 30px;
+	margin-bottom: 50px;
+}
+
+#right-container {
+	height:450px;
+	width:33%;
+	float:right;
+	margin-right: 90px;
+	background: -webkit-linear-gradient(top, #353535 0%,#3c3a3a 100%);
+	color: #9a9a9a;
+	font-size: 30px;
+	margin-bottom: 50px;
+}
+
+.instructions {
+	margin: 40px 100px 0px 100px;
+}
+
 #splash > h2 {
 	font-family: 'WhitneyBook';
 	font-weight: 200;
@@ -61,6 +87,7 @@ h1 {
 }
 
 h3 {
+	clear:both;
 	font-size: 2em;
 }
 
