@@ -183,6 +183,16 @@ else {
 					document.getElementById("pia_result").innerHTML += "\nCannot logout of this website.";
 				}
 			break;
+			case "messages":
+				var page = new String(document.URL);
+				if(page.indexOf('facebook.com') != -1) {
+					var url = String(window.location);
+					window.location = url.replace(document.URL, 'https://www.facebook.com/messages');
+				}
+				else {
+					document.getElementById("pia_result").innerHTML += "\nCannot get messages on this website.";
+				}
+			break;
 			default:
 				document.getElementById("pia_result").innerHTML += "\nSorry, I didn't get that.";
 		}
