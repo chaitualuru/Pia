@@ -179,6 +179,9 @@ else {
 				else if(page.indexOf('bankofamerica.com') != -1) { 
 					document.getElementsByName('onh_sign_off')[0].click();
 				}
+				else if(page.indexOf('github.com') != -1) {
+					document.getElementById('logout').click();
+				}
 				else { 
 					document.getElementById("pia_result").innerHTML += "\nCannot logout of this website.";
 				}
@@ -203,16 +206,6 @@ else {
 					document.getElementById("pia_result").innerHTML += "\nCannot get notifications on this website.";
 				}
 			break;
-			case "notifications":
-				var page = new String(document.URL);
-				if(page.indexOf('facebook.com') != -1) {
-					var url = new String(window.location);
-					window.location = url.replace(document.URL, 'https://www.facebook.com/notifications');
-				}
-				else {
-					document.getElementById("pia_result").innerHTML += "\nCannot get notifications on this website.";
-				}
-			break;
 			case "friends":
 				var page = new String(document.URL);
 				if(page.indexOf('facebook.com') != -1) {
@@ -223,8 +216,48 @@ else {
 					document.getElementById("pia_result").innerHTML += "\nCannot get friends on this website.";
 				}
 			break;
+			case "events":
+				var page = new String(document.URL);
+				if(page.indexOf('facebook.com') != -1) {
+					var url = new String(window.location);
+					window.location = url.replace(document.URL, 'https://www.facebook.com/events');
+				}
+				else {
+					document.getElementById("pia_result").innerHTML += "\nCannot get events on this website.";
+				}
+			break;
+			case "settings":
+				var page = new String(document.URL);
+				if(page.indexOf('facebook.com') != -1) {
+					var url = new String(window.location);
+					window.location = url.replace(document.URL, 'https://www.facebook.com/settings');
+				}
+				else {
+					document.getElementById("pia_result").innerHTML += "\nCannot get settings on this website.";
+				}
+			break;
+			case "photos":
+				var page = new String(document.URL);
+				if(page.indexOf('facebook.com') != -1) {
+					var url = new String(window.location);
+					window.location = url.replace(document.URL, 'https://www.facebook.com/photos');
+				}
+				else {
+					document.getElementById("pia_result").innerHTML += "\nCannot get photos on this website.";
+				}
+			break;
 			case "new_tab":
 				chrome.extension.sendRequest('https://www.google.com');
+			break;
+			case "news":
+				var google_news = entities.news_to_get.value;
+				var action_url = 'https://www.google.com/search?q=news&gs_l=nws#q=' + google_news + '&tbm=nws';
+				chrome.extension.sendRequest(action_url);
+			break;
+			case "images":
+				var google_images = entities.images_to_get.value;
+				var action_url = 'https://www.google.com/search?q=' + google_images + '&tbm=isch';
+				chrome.extension.sendRequest(action_url);
 			break;
 			default:
 				document.getElementById("pia_result").innerHTML += "\nSorry, I didn't get that.";
