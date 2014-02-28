@@ -193,6 +193,39 @@ else {
 					document.getElementById("pia_result").innerHTML += "\nCannot get messages on this website.";
 				}
 			break;
+			case "notifications":
+				var page = new String(document.URL);
+				if(page.indexOf('facebook.com') != -1) {
+					var url = new String(window.location);
+					window.location = url.replace(document.URL, 'https://www.facebook.com/notifications');
+				}
+				else {
+					document.getElementById("pia_result").innerHTML += "\nCannot get notifications on this website.";
+				}
+			break;
+			case "notifications":
+				var page = new String(document.URL);
+				if(page.indexOf('facebook.com') != -1) {
+					var url = new String(window.location);
+					window.location = url.replace(document.URL, 'https://www.facebook.com/notifications');
+				}
+				else {
+					document.getElementById("pia_result").innerHTML += "\nCannot get notifications on this website.";
+				}
+			break;
+			case "friends":
+				var page = new String(document.URL);
+				if(page.indexOf('facebook.com') != -1) {
+					var url = new String(window.location);
+					window.location = url.replace(document.URL, 'https://www.facebook.com/friends');
+				}
+				else {
+					document.getElementById("pia_result").innerHTML += "\nCannot get friends on this website.";
+				}
+			break;
+			case "new_tab":
+				chrome.extension.sendRequest('https://www.google.com');
+			break;
 			default:
 				document.getElementById("pia_result").innerHTML += "\nSorry, I didn't get that.";
 		}
