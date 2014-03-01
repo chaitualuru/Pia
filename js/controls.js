@@ -86,7 +86,7 @@ else {
 		switch(intent_string) {
 			case "search":
 				var search_provider = entities.search_provider;
-				switch(search_provider) {
+				switch(search_provider.value) {
 					case "wikipedia":
 						var action_url = "http://en.wikipedia.org/w/index.php?search=" + entities.object_to_search.value;
 						chrome.extension.sendRequest(action_url);
