@@ -85,12 +85,7 @@ else {
 
 		switch(intent_string) {
 			case "search":
-				if (entities.search_provider == undefined) {
-					var search_provider = "";
-				}
-				else {
-					var search_provider = entities.search_provider.value;
-				}
+				var search_provider = entities.search_provider;
 				switch(search_provider) {
 					case "wikipedia":
 						var action_url = "http://en.wikipedia.org/w/index.php?search=" + entities.object_to_search.value;
