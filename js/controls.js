@@ -86,23 +86,34 @@ else {
 		switch(intent_string) {
 			case "search":
 				var search_provider = entities.search_provider;
-				switch(search_provider.value) {
-					case "wikipedia":
-						var action_url = "http://en.wikipedia.org/w/index.php?search=" + entities.object_to_search.value;
-						chrome.extension.sendRequest(action_url);
-						break;
-					case "imdb":
-						var action_url = "http://www.imdb.com/find?q=" + entities.object_to_search.value;
-						chrome.extension.sendRequest(action_url);
-						break;
-					case "wolfram":
-						var action_url = "http://www.wolframalpha.com/input/?i=" + entities.object_to_search.value;
-						chrome.extension.sendRequest(action_url);
-						break;
-					default:
-						var action_url = "https://www.google.com/search?q=" + entities.object_to_search.value;
-						chrome.extension.sendRequest(action_url);
-						break;
+				var search_site;
+				if (search_provider == null) {
+					search_site = "";
+				}
+				else {
+					search_site = search_provider.value;
+				}
+				if(entities.object_to_search == null) {
+					document.getElementById("pia_result").innerHTML += "\nSorry, I didn't get that.";
+				}
+				else {
+					switch(search_site) {
+						case "wikipedia":
+							var action_url = "http://en.wikipedia.org/w/index.php?search=" + entities.object_to_search.value;
+							chrome.extension.sendRequest(action_url);
+							break;
+						case "imdb":
+							var action_url = "http://www.imdb.com/find?q=" + entities.object_to_search.value;
+							chrome.extension.sendRequest(action_url);
+							break;
+						case "wolfram":
+							var action_url = "http://www.wolframalpha.com/input/?i=" + entities.object_to_search.value;
+							chrome.extension.sendRequest(action_url);
+							break;
+						default:
+							var action_url = "https://www.google.com/search?q=" + entities.object_to_search.value;
+							chrome.extension.sendRequest(action_url);
+					}
 				}
 			break;
 			case "open":
