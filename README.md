@@ -3,6 +3,8 @@ Pia
 
 Pia is a voice controlled personal assistant for Chrome.
 
+Pia can be toggled on and off with the click of a button or a quick keyboard shortcut (Alt + P). Launch Pia, press the spacebar to start recording, and press the spacebar again to stop recording.
+
 Some things you can do with Pia:
 
 - Search Google, Wikipedia, IMDB and more using simple voice commands:
