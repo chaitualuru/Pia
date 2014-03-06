@@ -252,6 +252,16 @@ else {
 					document.getElementById("pia_result").innerHTML += "\nCannot get photos on this website.";
 				}
 			break;
+			case "home":
+				var page = new String(document.URL);
+				if(page.indexOf('facebook.com') != -1) {
+					var url = new String(window.location);
+					window.location = url.replace(document.URL, 'https://www.facebook.com/');
+				}
+				else {
+					document.getElementById("pia_result").innerHTML += "\nCannot get to home on this website.";
+				}
+			break;
 			case "new_tab":
 				chrome.extension.sendRequest('https://www.google.com');
 			break;
